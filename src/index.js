@@ -9,7 +9,7 @@ const splitPDF = async (pdfFilePath) => {
   const readPdf = await PDFDocument.load(data);
   const { length } = readPdf.getPages();
 
-  for (let i = 0, n = length; i < 5; i += 1) {
+  for (let i = 0, n = length; i < n; i += 1) {
     const writePdf = await PDFDocument.create();
     const [page] = await writePdf.copyPages(readPdf, [i]);
     writePdf.addPage(page);
